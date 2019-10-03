@@ -71,16 +71,16 @@ public class GameEngine extends SurfaceView implements Runnable {
     int item4YPosition;
     Rect item4Hitbox;
 
-    int line1XPosition;  // top left corner of the racket
+    int line1XPosition;
     int line1YPosition;
 
-    int line2XPosition;  // top left corner of the racket
+    int line2XPosition;
     int line2YPosition;
 
-    int line3XPosition;  // top left corner of the racket
+    int line3XPosition;
     int line3YPosition;
 
-    int line4XPosition;  // top left corner of the racket
+    int line4XPosition;
     int line4YPosition;
 
     // ----------------------------
@@ -235,7 +235,7 @@ public class GameEngine extends SurfaceView implements Runnable {
             // if mousedown, then move player up
             // Make the UP movement > than down movement - this will
             // make it look like the player is moving up alot
-            this.playerYPosition = this.playerYPosition - 150;
+            this.playerYPosition = this.playerYPosition - 50;
 
             updateHitbox(playerHitbox,
                     playerImage,
@@ -247,12 +247,36 @@ public class GameEngine extends SurfaceView implements Runnable {
             // if mousedown, then move player up
             // Make the UP movement > than down movement - this will
             // make it look like the player is moving up alot
-            this.playerYPosition = this.playerYPosition + 150;
+            this.playerYPosition = this.playerYPosition + 50;
 
             updateHitbox(playerHitbox,
                     playerImage,
                     playerXPosition,
                     playerYPosition);
+        }
+
+        if(this.playerYPosition <= 0){
+
+            this.playerXPosition = this.screenWidth - 200;
+            this.playerYPosition = 475;
+
+            updateHitbox(playerHitbox,
+                    playerImage,
+                    playerXPosition,
+                    playerYPosition);
+
+        }
+
+        if(this.playerYPosition+playerImage.getHeight() > this.screenHeight){
+
+            this.playerXPosition = this.screenWidth - 200;
+            this.playerYPosition = 25;
+
+            updateHitbox(playerHitbox,
+                    playerImage,
+                    playerXPosition,
+                    playerYPosition);
+
         }
 
 
@@ -334,6 +358,11 @@ public class GameEngine extends SurfaceView implements Runnable {
                     100+this.item1Image.getWidth(),
                     25+this.item1Image.getHeight());
 
+            updateHitbox(playerHitbox,
+                    playerImage,
+                    playerXPosition,
+                    playerYPosition);
+
             score = score + 1;
         }
 
@@ -345,6 +374,11 @@ public class GameEngine extends SurfaceView implements Runnable {
                     175,
                     100+this.item1Image.getWidth(),
                     175+this.item1Image.getHeight());
+
+            updateHitbox(playerHitbox,
+                    playerImage,
+                    playerXPosition,
+                    playerYPosition);
 
             score = score + 2;
         }
@@ -358,6 +392,11 @@ public class GameEngine extends SurfaceView implements Runnable {
                     100+this.item1Image.getWidth(),
                     325+this.item1Image.getHeight());
 
+            updateHitbox(playerHitbox,
+                    playerImage,
+                    playerXPosition,
+                    playerYPosition);
+
             lives = lives - 1;
         }
 
@@ -369,6 +408,11 @@ public class GameEngine extends SurfaceView implements Runnable {
                     475,
                     100+this.item1Image.getWidth(),
                     475+this.item1Image.getHeight());
+
+            updateHitbox(playerHitbox,
+                    playerImage,
+                    playerXPosition,
+                    playerYPosition);
 
             score = score + 2;
         }
@@ -384,28 +428,28 @@ public class GameEngine extends SurfaceView implements Runnable {
             this.canvas.drawColor(Color.argb(255,255,255,255));
             paintbrush.setColor(Color.WHITE);
 
-            paintbrush.setColor(Color.YELLOW);
+            paintbrush.setColor(Color.GREEN);
             this.canvas.drawRect(this.line1XPosition,
                     this.line1YPosition,
-                    this.line1XPosition + 700,     // 400 is width of racket
+                    this.line1XPosition + 800,     // 400 is width of racket
                     this.line1YPosition + 5,    // 50 is height of racket
                     paintbrush);
 
             this.canvas.drawRect(this.line2XPosition,
                     this.line2YPosition,
-                    this.line2XPosition + 700,     // 400 is width of racket
+                    this.line2XPosition + 800,     // 400 is width of racket
                     this.line2YPosition + 5,    // 50 is height of racket
                     paintbrush);
 
             this.canvas.drawRect(this.line3XPosition,
                     this.line3YPosition,
-                    this.line3XPosition + 700,     // 400 is width of racket
+                    this.line3XPosition + 800,     // 400 is width of racket
                     this.line3YPosition + 5,    // 50 is height of racket
                     paintbrush);
 
             this.canvas.drawRect(this.line4XPosition,
                     this.line4YPosition,
-                    this.line4XPosition + 700,     // 400 is width of racket
+                    this.line4XPosition + 800,     // 400 is width of racket
                     this.line4YPosition + 5,    // 50 is height of racket
                     paintbrush);
 
