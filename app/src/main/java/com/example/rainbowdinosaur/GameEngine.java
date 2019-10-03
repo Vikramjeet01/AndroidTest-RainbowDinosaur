@@ -243,7 +243,7 @@ public class GameEngine extends SurfaceView implements Runnable {
                     playerYPosition);
         }
 
-        else if (this.personTapped == "down") {
+         if (this.personTapped == "down") {
             // if mousedown, then move player up
             // Make the UP movement > than down movement - this will
             // make it look like the player is moving up alot
@@ -380,7 +380,7 @@ public class GameEngine extends SurfaceView implements Runnable {
                     playerXPosition,
                     playerYPosition);
 
-            score = score + 2;
+            score = score + 1;
         }
 
         if(this.playerHitbox.intersect(this.item3Hitbox) == true){
@@ -414,7 +414,7 @@ public class GameEngine extends SurfaceView implements Runnable {
                     playerXPosition,
                     playerYPosition);
 
-            score = score + 2;
+            score = score + 1;
         }
     }
 
