@@ -11,8 +11,6 @@ public class Item {
     // Image
     // Hitbox
     private Bitmap image;
-    //private Bitmap imageP;
-    ///private Bitmap imageR;
     private Rect hitbox;
 
     private int xPosition;
@@ -25,8 +23,6 @@ public class Item {
 
         // 2. Set the default image - all enemies have same image
         this.image = BitmapFactory.decodeResource(context.getResources(), R.drawable.candy32);
-        //this.imageP = BitmapFactory.decodeResource(context.getResources(), R.drawable.poop64);
-        //this.imageR = BitmapFactory.decodeResource(context.getResources(), R.drawable.rainbow64);
 
         // 3. Set the default hitbox - all enemies have same hitbox
         this.hitbox = new Rect(
@@ -36,19 +32,6 @@ public class Item {
                 this.yPosition + this.image.getHeight()
         );
 
-        //this.hitbox = new Rect(
-         //       this.xPosition,
-          //      this.yPosition,
-          //      this.xPosition + this.imageP.getWidth(),
-          //      this.yPosition + this.imageP.getHeight()
-        //);
-
-        //this.hitbox = new Rect(
-        //        this.xPosition,
-        //        this.yPosition,
-         //       this.xPosition + this.imageR.getWidth(),
-         //       this.yPosition + this.imageR.getHeight()
-        //);
     }
 
     // Getter and setters
